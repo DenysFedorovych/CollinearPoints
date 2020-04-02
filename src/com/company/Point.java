@@ -62,7 +62,7 @@ public class Point implements Comparable<Point> {
      *         argument point
      */
     public int compareTo(Point that) {
-        if (this.y <= that.y && this.x < that.x)
+        if (this.y < that.y || (this.y == that.y && this.x < that.y))
             return -1;
         else {
             if (that.y == this.y && that.x == this.x)
@@ -78,23 +78,38 @@ public class Point implements Comparable<Point> {
      * The slope is defined as in the slopeTo() method.
      *
      * @return the Comparator that defines this ordering on points
+     * The slopeOrder() method should return a comparator that compares its two argument points by the slopes they make
+     * with the invoking point (x0, y0).
+     * Formally, the point (x1, y1) is less than the point (x2, y2) if and only
+     * if the slope (y1 − y0) / (x1 − x0) is less than the slope (y2 − y0) / (x2 − x0).
+     * Treat horizontal, vertical, and degenerate line segments as in the slopeTo() method.
      */
     class sortPoint implements Comparator<Point>
     {
+        private double slope(Point that) {
+            double k = (that.y - this.y)/(that.x - this.x);
+            if (that.x == this.x && that.y != this.y)
+                return Double.POSITIVE_INFINITY;
+            else {
+                if (that.y == this.y && that.x == this.x)
+                    return Double.NEGATIVE_INFINITY;
+                else
+                    return k;
+            }
+        @override
         public int compare(Point a, Point b)
         {
-            if (a.y <= b.y && a.x < b.x)
+            if (slope.a < slope.b)
                 return -1;
             else {
-                if (a.y == b.y && a.x == b.x)
+                if (slope.a == slope.b)
                 return 0;
                 else
                     return 1;}
         }
     }
     public Comparator<Point> slopeOrder() {
-        sortPoint a = new sortPoint();
-        return a;
+        return new sortPoint();
     }
 
 
