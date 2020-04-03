@@ -1,22 +1,24 @@
 package com.company;
-
+import java.util.Arrays;
 public class BruteCollinearPoints {
     private int k=0;
-    private void addTo(LineSegments[] segments, LineSegment a){
+    private BruteCollinearPoints a;
+    private LineSegment[] segments = new LineSegment[2];
+    private void addTo(LineSegment[] segments, LineSegment a){
         segments[k] = a;
         k++;
         if(k>=(segments.length/2)){
-            LineSegments[] A = new LineSegments[k];
+            LineSegment[] A = new LineSegment[k];
             for(int i=0; i<k; i++){
                 A[i] = segments[i];
             }
-            segments = new LineSegments[segments.length*2];
+            segments = new LineSegment[segments.length*2];
             for(int i=0; i<k; i++){
                 segments [i] = A [i];
             }
         }
     }
-    private LineSegments[2] segments;
+
     public BruteCollinearPoints(Point[] points){
         int m = points.length;
         for (int p=0; p<m; p++)
@@ -29,7 +31,7 @@ public class BruteCollinearPoints {
                 }
             }
         }
-        points.sort();
+        Arrays.sort(points);
         for (int i=0; i<m; i++)
         {
             for(int j=i+1; j<m; m++)
@@ -40,7 +42,8 @@ public class BruteCollinearPoints {
                     {
                          if(points[h].slopeTo(points[l])==points[l].slopeTo(points[j]) && points[l].slopeTo(points[j])==points[j].slopeTo(points[i]))
                          {
-                             BruteCollinearPoints.addTo(segments,LineSegment(points [i],points [h]));
+                             LineSegment b = new LineSegment(points [i],points [h]);
+                             a.addTo(segments,b);
                          }
                     }
                 }
