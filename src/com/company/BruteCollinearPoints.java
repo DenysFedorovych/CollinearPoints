@@ -2,6 +2,20 @@ package com.company;
 
 public class BruteCollinearPoints {
     private int k=0;
+    private void addTo(LineSegments[] segments, LineSegment a){
+        segments[k] = a;
+        k++;
+        if(k>=(segments.length/2)){
+            LineSegments[] A = new LineSegments[k];
+            for(int i=0; i<k; i++){
+                A[i] = segments[i];
+            }
+            segments = new LineSegments[segments.length*2];
+            for(int i=0; i<k; i++){
+                segments [i] = A [i];
+            }
+        }
+    }
     private LineSegments[2] segments;
     public BruteCollinearPoints(Point[] points){
         int m = points.length;
@@ -26,8 +40,7 @@ public class BruteCollinearPoints {
                     {
                          if(points[h].slopeTo(points[l])==points[l].slopeTo(points[j]) && points[l].slopeTo(points[j])==points[j].slopeTo(points[i]))
                          {
-                             segments[k] = LineSegment(points[i],points[h]);
-                             k++;
+                             BruteCollinearPoints.addTo(segments,LineSegment(points [i],points [h]));
                          }
                     }
                 }
@@ -37,5 +50,5 @@ public class BruteCollinearPoints {
 
     public           int numberOfSegments(){return k;}        // the number of line segments
 
-    public LineSegment[] segments()                // the line segments
+    public LineSegment[] segments(){return segments;}                // the line segments
 }
