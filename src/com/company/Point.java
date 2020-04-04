@@ -84,32 +84,25 @@ public class Point implements Comparable<Point> {
      * if the slope (y1 − y0) / (x1 − x0) is less than the slope (y2 − y0) / (x2 − x0).
      * Treat horizontal, vertical, and degenerate line segments as in the slopeTo() method.
      */
-    class sortPoint implements Comparator<Point>
-    {
-        private double slope(Point that) {
-            double k = (that.y - this.y)/(that.x - this.x);
-            if (that.x == this.x && that.y != this.y)
-                return Double.POSITIVE_INFINITY;
-            else {
-                if (that.y == this.y && that.x == this.x)
-                    return Double.NEGATIVE_INFINITY;
-                else
-                    return k;
+    class sortPoint implements Comparator<Point> {
+        Point p;
+        private sortPoint(Point p){this.p = p;}
+            //@override
+            public int compare(Point a, Point b)
+            {
+                if (p.slopeTo(a) <p.slopeTo(b))
+                    return -1;
+                else {
+                    if (p.slopeTo(a) == p.slopeTo(b))
+                        return 0;
+                    else
+                        return 1;
+                }
             }
-        @override
-        public int compare(Point a, Point b)
-        {
-            if (slope.a < slope.b)
-                return -1;
-            else {
-                if (slope.a == slope.b)
-                return 0;
-                else
-                    return 1;}
         }
-    }
+
     public Comparator<Point> slopeOrder() {
-        return new sortPoint();
+        return new sortPoint(this);
     }
 
 

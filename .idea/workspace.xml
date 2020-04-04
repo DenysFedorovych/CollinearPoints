@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6aae80-f12c-4c17-9d23-5d4cafabdf9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/BruteCollinearPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/BruteCollinearPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/FastCollinearPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/FastCollinearPoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,20 +66,40 @@
       <option name="presentableId" value="Default" />
       <updated>1582384264607</updated>
     </task>
+    <task id="LOCAL-00001" summary="Third class is ready, i think">
+      <created>1585924834441</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585924834442</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Third class is ready, i think" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third class is ready, i think" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1585924832987">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585924832987" />
     <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1585924376399">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585924376399" />
-    <state x="384" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1585924045080">
+    <state x="384" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1585995067877">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="384" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585924045080" />
+    <state x="384" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585995067877" />
     <state x="70" y="0" key="new project wizard" timestamp="1585058503567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="70" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1585058503567" />
+    <state x="351" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586012263326">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="351" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586012263326" />
   </component>
 </project>
