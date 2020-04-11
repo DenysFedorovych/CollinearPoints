@@ -36,14 +36,16 @@ public class Point implements Comparable<Point> {
      * @return the slope between this point and the specified point
      */
     public double slopeTo(Point that) {
-        double k = (that.y - this.y)/(that.x - this.x);
         if (that.x == this.x && that.y != this.y)
         return Double.POSITIVE_INFINITY;
         else {
             if (that.y == this.y && that.x == this.x)
             return Double.NEGATIVE_INFINITY;
+            if(that.y == this.y && that.x != this.x)
+                return 0.0;
             else
-                return k;
+            {double k = (double) (that.y - this.y)/(that.x - this.x);
+                return  k;}
         }
 
 
@@ -62,7 +64,7 @@ public class Point implements Comparable<Point> {
      *         argument point
      */
     public int compareTo(Point that) {
-        if (this.y < that.y || (this.y == that.y && this.x < that.y))
+        if (this.y < that.y || (this.y == that.y && this.x < that.x))
             return -1;
         else {
             if (that.y == this.y && that.x == this.x)
@@ -84,7 +86,7 @@ public class Point implements Comparable<Point> {
      * if the slope (y1 − y0) / (x1 − x0) is less than the slope (y2 − y0) / (x2 − x0).
      * Treat horizontal, vertical, and degenerate line segments as in the slopeTo() method.
      */
-    class sortPoint implements Comparator<Point> {
+    private class sortPoint implements Comparator<Point> {
         Point p;
         private sortPoint(Point p){this.p = p;}
             //@override
