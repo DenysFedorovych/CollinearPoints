@@ -8,10 +8,10 @@ public class Main {
         Point s = new Point(6,0);
         Point d = new Point(7,0);
         Point f = new Point(9,0);
-        Point g = new Point(5,0);
+        Point g = new Point(5,3);
         Point h = new Point(14,1);
         Point j = new Point(11,1);
-        Point k = new Point(10,1);
+        Point k = new Point(10,5);
         Point z = new Point(2,1);
         Point l = new Point(0,1);
         points[0] = a;
@@ -29,7 +29,7 @@ public class Main {
         LineSegment[] A = W.segments();
         System.out.println(A[0]);
         System.out.println(A[1]);
-        System.out.println(A[2]);
-        System.out.println(A[3]);
+
+
 }
 }

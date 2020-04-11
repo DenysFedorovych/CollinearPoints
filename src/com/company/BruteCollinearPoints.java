@@ -16,10 +16,11 @@ public class BruteCollinearPoints {
                     throw new IllegalArgumentException("Wrong Argument");
                 }
             }
+        }
             Arrays.sort(points);
-            for (int i = 0; i < m; i++) {
-                for (int j = i + 1; j < m; m++) {
-                    for (int l = j + 1; l < m; l++) {
+            for (int i = 0; i < m-3; i++) {
+                for (int j = i + 1; j < m-2; j++) {
+                    for (int l = j + 1; l < m-1; l++) {
                         for (int h = l + 1; h < m; h++) {
                             if (points[h].slopeTo(points[l]) == points[l].slopeTo(points[j]) && points[l].slopeTo(points[j]) == points[j].slopeTo(points[i])) {
                                 LineSegment b = new LineSegment(points[i], points[h]);
@@ -31,7 +32,7 @@ public class BruteCollinearPoints {
                 }
             }
         }    // finds all line segments containing 4 points
-    }
+
 
     public int numberOfSegments() {
         return y;
